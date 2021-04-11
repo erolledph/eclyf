@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form test</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="pt-4"></div>
+<div class="container">
+  <div>
+    <h3 class="text-center">SUBSCRIBE</h3>
+  </div>
+  <form method="post" autocomplete="off" name="subscribe">
+    <div class="form-group">
+      <label for="name">Enter name</label>
+   
+      <input type="text" class="form-control"  placeholder="Enter Name Ex: Juan Dela Cruz" name="name" required>
+    </div>
+    
+    <div class="form-group">
+
+      <label for="number">Enter Your Phone Number</label>
+
+   
+      <input type="number" class="form-control"  placeholder="09169888270" name="number" min="11" required> 
+    </div>
+    
+    
+    
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    
+    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"  required>
+    
+    
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+ 
+  <button type="submit" name="submit" value="Send message" class="btn btn-primary">Submit</button>
+</form>
+</div>
+<script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzf03HnAZOw0H7tuc6xxFD3iC50M_qxP6ju1YigOjBxaznmfanT/exec'
+            const form = document.forms['subscribe']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+<!-- script code -->
+ 
+
+</body>
+</html>
